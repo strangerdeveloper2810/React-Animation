@@ -1,7 +1,10 @@
 import React from 'react'
+import DemoUseSpring from './DemoUseSpring'
 
 export default function DemoReactSpring(props) {
   return (
-    <div>DemoReactSpring</div>
+    <div>
+        <DemoUseSpring/>
+    </div>
   )
 }
