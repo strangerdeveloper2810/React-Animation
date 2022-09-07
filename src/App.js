@@ -2,7 +2,7 @@ import DemoReactSpring from "./ReactSpring/DemoReactSpring";
 
 function App() {
   return (
-    <div className="container">
+    <div className="container-fluid">
       <DemoReactSpring/>
     </div>
   );

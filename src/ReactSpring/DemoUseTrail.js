@@ -9,7 +9,7 @@ const items = [
 export default function DemoUseTrail(props) {
   let [status, setStatus] = useState(true);
 
-  const [propsUseTrail, set, stop] = useTrail(items.length, () => {
+  const [propsUseTrail, set] = useTrail(items.length, () => {
     return {
       opacity: status ? 1 : 0,
       x: status ? 0 : 20,
