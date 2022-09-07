@@ -28,19 +28,63 @@ export default function Ex2UseSpring(props) {
 
     config: { duration: 5000 },
   });
+
+  //   Tăng font chữ và tăng độ dài
+  let propsAnimation = useSpring({
+    from: {
+      width: "0%",
+      height: "0%",
+      fontSize: "10px",
+      color: "blue",
+    },
+
+    to: async (next, cancel) => {
+      await next({
+        widht: "100%",
+        opacity: 1,
+        height: "100%",
+        fontSize: "50px",
+        color: "#FFAAEE",
+      });
+      await next({
+        widht: "50%",
+        opacity: 0,
+        height: "50%",
+        fontSize: "20px",
+        color: "rgb(14,26,19)",
+      });
+      await next({
+        widht: "100%",
+        opacity: 1,
+        height: "100%",
+        fontSize: "50px",
+        color: "red",
+      });
+    },
+
+    config: {duration: 5000}
+  });
   return (
     <div>
       <animated.div
-      className="display-4"
+        className="display-4"
         style={{
           //   color: propsUseSpring.color.to((r, g, b) => {
           //     return `rgb(${r},${g},${b})`;
           //   }),
 
-          color: color.to((r,g,b)=>{return `rgb(${r},${g},${b})`}),
+          color: color.to((r, g, b) => {
+            return `rgb(${r},${g},${b})`;
+          }),
         }}
       >
         Hello Stranger
+      </animated.div>
+
+
+      <animated.div style={propsAnimation}>
+        <h1>Front-End Engineer</h1>
+        <p>Skill: ReactJS + TypeScipt + Redux</p>
       </animated.div>
     </div>
   );
