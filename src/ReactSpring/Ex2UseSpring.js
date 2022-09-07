@@ -15,7 +15,7 @@ export default function Ex2UseSpring(props) {
   //     config: { duration: 5000 },
   //   });
 
-  let { color, ...propsUseSpring } = useSpring({
+  let { color} = useSpring({
     // Màu sắc sau khi animation chạy xong
     color: [131, 111, 255],
     // color: "rgb(131,111,255)",
@@ -62,7 +62,7 @@ export default function Ex2UseSpring(props) {
       });
     },
 
-    config: {duration: 5000}
+    config: { duration: 5000 },
   });
   return (
     <div>
@@ -80,7 +80,6 @@ export default function Ex2UseSpring(props) {
       >
         Hello Stranger
       </animated.div>
-
 
       <animated.div style={propsAnimation}>
         <h1>Front-End Engineer</h1>
