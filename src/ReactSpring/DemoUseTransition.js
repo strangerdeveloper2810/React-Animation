@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useTransition, animated } from "react-spring";
+import {useTransition, animated} from "@react-spring/web"
 export default function DemoUseTransition(props) {
   const [arrItems, setArrItems] = useState([
     { id: 1, title: "Front-End Engineer", content: "ReactJS" },

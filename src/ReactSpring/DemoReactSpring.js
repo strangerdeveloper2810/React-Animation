@@ -1,4 +1,5 @@
 import React from 'react'
+import DemoUseChain from './DemoUseChain'
 import DemoUseTransition from './DemoUseTransition'
 // import DemoUseTrail from './DemoUseTrail'
 // import DemoUseSprings from './DemoUseSprings'
@@ -12,7 +13,8 @@ export default function DemoReactSpring(props) {
         {/* <Ex2UseSpring/> */}
         {/* <DemoUseSprings/> */}
         {/* <DemoUseTrail/> */}
-        <DemoUseTransition/>
+        {/* <DemoUseTransition/> */}
+        <DemoUseChain/>
     </div>
   )
 }
