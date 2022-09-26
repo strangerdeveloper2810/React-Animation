@@ -11,9 +11,9 @@ export default function DemoUseChain() {
   //Tạo 1 useSpring animation
   let springRef = useSpringRef();
   let [arrContent, setArrContent] = useState([
-    { id: 1, title: "FrontEndOnline", content: "cyberlearn" },
-    { id: 2, title: "FrontEndOffline", content: "cybersoft" },
-    { id: 3, title: "FrontEndTuXa", content: "cybersoft" },
+    { id: 1, title: "Front-End Developer", content: "ReactJS" },
+    { id: 2, title: "Back-End Developer", content: "NodeJS" },
+    { id: 3, title: "Mobile Developer", content: "Flutter" },
   ]);
 
   const propsAnimation = useSpring({
@@ -47,14 +47,11 @@ export default function DemoUseChain() {
   });
 
   //Kết hợp 2 useSpring
-  useChain([springRef, transitionRef]);
+  useChain([springRef, transitionRef], [0, 0.5]);
 
   const deleteItem = (id) => {
-    // setArrContent([
-    //   ...arrContent.filter((article) => article.id !== item.id),
-    // ]);
-    setArrContent([...arrContent.filter(item => item.id !== id)]);
-  }
+    setArrContent([...arrContent.filter((item) => item.id !== id)]);
+  };
   const renderItem = () => {
     return transitions((props, key, item) => (
       <animated.div
@@ -65,14 +62,17 @@ export default function DemoUseChain() {
         <div className="text-end ">
           <button
             className="btn btn-danger"
-            onClick={() => {deleteItem(item.id)}}
+            onClick={() => {
+              deleteItem(item.item.id);
+            }}
           >
             X
           </button>
         </div>
-        <h3>{item.title}</h3>
-        <h3>dfsd</h3>
-        <p>{item.content}</p>
+        <h3>{item.item.title}</h3>
+        <p>{item.item.content}</p>
+
+        {console.log("item", item)}
       </animated.div>
     ));
   };
